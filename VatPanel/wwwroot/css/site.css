@@ -1,0 +1,136 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+  font-family: Poppins !important;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    margin-bottom: 75px;
+    background-color: #333333;
+
+}
+.footer {
+    float:left;
+}
+
+h1 {
+    font-family: Poppins;
+    font-weight:bold;
+}
+
+h2 {
+    font-family:Poppins;
+    font-size:xx-large;
+    font-weight:bold;
+    
+}
+
+h3 {
+    font-family: Poppins;
+    font-size: x-large;
+    font-weight: normal;
+}
+
+h2 span {
+    background-color: #6F885B;
+}
+
+.rec1 {
+    width: 500px;
+    height: 750px;
+    background-color: #6F885B;
+    margin: 0px 0px 0px 10px;
+    float:left;
+}
+
+.rec2 {
+    width: 300px;
+    height: 200px;
+    background-color: #6F885B;
+    margin: 0px 0px 0px 10px;
+    float: left;
+}
+
+.rec5 {
+    width: 900px;
+    height: 750px;
+    background-color: #6F885B;
+    margin: 0px 0px 0px 10px;
+    float: left;
+   
+}
+
+.rec6 {
+    width: 150px;
+    height: 750px;
+    background-color: #6F885B;
+    margin: 0px 0px 0px 10px;
+    float: left;
+}
+
+.dashbutton {
+    background-color: white;
+    color: #6F885B;
+    font-weight:normal;
+}
+
+.tabs {
+
+}
+

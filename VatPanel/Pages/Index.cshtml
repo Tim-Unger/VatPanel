@@ -1,0 +1,107 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<!---<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>-->
+<body runat="server">
+    <meta http-equiv="refresh" content="60" id="refresh" hidden  />
+    <div class="tabs" style="background-color:#333333; margin:10px 0px 0px 10px">
+        <a style="color: white; background-color: #6F885B"><span>Events</span></a>
+        <a style="color: #6F885B">ATC Bookings</a>
+    </div>
+
+    <div class="rec1" id="connectdiv" runat="server" style="vertical-align:middle">
+
+        <select style="color: #6F885B; background-color:white">
+            Today
+            <option value="Today">Today</option>
+            <option value="Tomorrow">Tomorrow</option>
+        </select>
+        <input type="time" />
+        <input type="time" />
+        <button style="color:#6F885B; background-color:white">Show</button>
+        <small style="color:white">Start- and End-Times (in UTC)</small>
+    </div>
+
+    <div class="rec2">
+        <h2 style="color:white" id="VatClients">
+            @{
+                System.Net.WebClient wc = new System.Net.WebClient();
+                byte[] raw = wc.DownloadData("https://data.vatsim.net/vatsim-servers.txt");
+
+                string webData = System.Text.Encoding.UTF8.GetString(raw);
+                string[] s = webData.Split("CLIENTS =");
+                string[] s1 = s[1].Split("");
+                string[] s2 = s1[0].Split(";");
+
+            }
+
+            @s2[0] Connections
+        </h2>
+        <h2 style="color:white" id="DateUTC">
+            @{ 
+                string utcdate = DateTime.UtcNow.ToString("yyyy - MM - dd");
+                
+
+            }
+            @utcdate
+        </h2>
+
+        <h2 style="color:white" id="timeUTC">
+            <script>
+                function showTime() {
+                    var date = new Date();
+                    var h = date.getHours(); // 0 - 23
+                    var m = date.getMinutes(); // 0 - 59
+                    var s = date.getSeconds(); // 0 - 59
+                    var session = "AM";
+
+                    if (h == 0) {
+                        h = 12;
+                    }
+
+                    if (h > 12) {
+                        h = h - 12;
+                        session = "PM";
+                    }
+
+                    h = (h < 10) ? "0" + h : h;
+                    m = (m < 10) ? "0" + m : m;
+                    s = (s < 10) ? "0" + s : s;
+
+                    var time = h + ":" + m + ":" + s + " " + session;
+                    document.getElementById("MyClockDisplay").innerText = time;
+                    document.getElementById("MyClockDisplay").textContent = time;
+
+                    setTimeout(showTime, 1000);
+
+                }
+            </script>
+            @{  
+                string utc = DateTime.UtcNow.ToString("HHmm UTC");
+                
+        {
+
+        }
+            }
+            @utc <span onload="showTime"></span>
+        </h2>
+        <h2 style="color:white" id="timeLocal">
+            @{ 
+                string local = DateTime.Now.ToString("HHmm Local");
+            }
+            @local
+        </h2>
+    </div>
+    <div class="rec5">
+        <!--<embed type="text/html" src="https://my.vatsim.net/events/today" width="500" height="500"/>-->
+    </div>
+    <div class="rec6"></div>
+
+
+</body>

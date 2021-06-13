@@ -1,0 +1,176 @@
+﻿
+<!DOCTYPE html>
+<style>
+
+    /*#a:hover {
+        float: left;
+        display:block;
+        background-color:yellow;
+    }*/
+
+    #a {
+        display: block;
+    }
+
+
+        #a:hover + #b {
+            display: block;
+            position: absolute;
+            background-color: white;
+            color: #6F885B;
+        }
+
+    #b {
+        display: none;
+    }
+
+        #b:hover {
+            display: block;
+            position: absolute;
+            background-color: white;
+            color: #6F885B;
+        }
+
+    .dropdown-content {
+        display: block;
+        background-color: white;
+        color: #6F885B;
+    }
+</style>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - VatPanel</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+<body>
+    <header style="background-color:#6F885B">
+        <div class="navbar">
+
+            <h1>
+                <a style="color:white" href="/">
+                    VatPanel
+                </a>
+            </h1>
+
+            <h2>
+                <a href="/" style="color:white">Dashboard</a>
+            </h2>
+
+            <h2>
+                <a style="color:white" id="a">ATC ▼</a>
+                <div id="b">
+                    <a href="#" class="dropdown-content">Current Online Controllers</a>
+                    <a href="#" class="dropdown-content">Controller Bookings</a>
+
+                </div>
+            </h2>
+
+            <h2>
+                <a style="color:white" id="a">Pilots ▼</a>
+                <div id="b">
+                    <a href="#" class="dropdown-content">Current Online Pilots</a>
+                    <a href="#" class="dropdown-content">Events</a>
+                    <a href="https://map.vatsim.net" target="_blank" rel="noopener noreferrer" class="dropdown-content">Vatsim Map</a>
+                    <a href="#" class="dropdown-content">Pilot Resources</a>
+                </div>
+            </h2>
+
+            <h2>
+                <a style="color:white" id='a'>
+                    Vatsim ▼
+                </a>
+                <div id="b">
+                    <a href="https://vatsim.net" target="_blank" rel="noopener noreferrer" class="dropdown-content">Vatsim.net</a>
+                    <a href="#" class="dropdown-content">Divisions and vACCs</a>
+                    <a href="#" class="dropdown-content">Events</a>
+                    <a href="https://map.vatsim.net" target="_blank" rel="noopener noreferrer" class="dropdown-content">Vatsim Map</a>
+                    <a href="#" class="dropdown-content">Vatsim Social Media</a>
+                    <a href="#" class="dropdown-content">Rules and Regulations</a>
+                    <a href="#" class="dropdown-content">Helpful Programs</a>
+                </div>
+
+            </h2>
+
+            <h2>
+                <a style="color:white" id='a'>
+                    About ▼
+                </a>
+                <div id="b">
+                    <a href="https://stats.vatsim.net/search_id.php?id=1468997" target="_blank" rel="noopener noreferrer" style="font-size:large" class="dropdown-content">Created by Tim Unger - 1468997</a>
+                    <a href="#" class="dropdown-content">Status</a>
+                    <a href="/About" class="dropdown-content">About</a>
+                    <a href="/Privacy" class="dropdown-content">Privacy Policy</a>
+                    <a href="#" class="dropdown-content">Imprint/Site Notice</a>
+                    <a href="#" class="dropdown-content">Third Party Software</a>
+                    <a href="https://github.com/Tim-Unger" target="_blank" rel="noopener noreferrer" class="dropdown-content">Github</a>
+                    <a href="mailto:timunger233@gmail.com" target="_blank" rel="noopener noreferrer" class="dropdown-content">Mail</a>
+                    <a class="dropdown-content">Discord: Tim#2854</a>
+
+
+
+                </div>
+
+            </h2>
+
+            <h2 href="https://vatsim.net" target="_blank" rel="noopener noreferrer">
+                <a href="https://my.vatsim.net" style="color:white">My Vatsim</a>
+            </h2>
+
+        </div>
+
+
+
+
+    </header>
+    <div class="" style="background-color: transparent; color:transparent">
+        <h5 style="color: white; background-color: transparent ">
+            @{
+                string loadTime = DateTime.Now.ToString("HH:mm:ss");
+
+
+
+            }
+            <script id="timer">
+
+                var count = 59, timer = setInterval(function () {
+                    $("#counter").html(count--);
+                    if (count == 1) clearInterval(timer);
+                }, 1000);
+
+            </script>
+
+            Updated: @loadTime Next update in: <span id="counter"></span>
+            <input type="checkbox" id="autorefresh"  style="padding: 0px 0px 10px 10px" checked/>
+            <label for="autorefresh" >Refresh automatically</label>
+        </h5>
+        
+    </div>
+    <!--<div style="background-color:#6F885B; height:inherit">
+        <h2 style="color:white"><span>Data up-to-date</span></h2>
+        <h2 style="color:white">Updated: 0000Z</h2>
+    </div>-->
+    <!--<div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>-->
+    <footer>
+        <a style="color:white">Do not use for Real-World Navigation. VatPanel is neither affiliated with Vatsim.net, nor does it represent Vatsim or any other Party mentioned in this Website</a>
+        <a href="/Privacy" style="color: #6F885B">Privacy Policy</a>
+        <a style="color:white">
+           Version 1.0.0
+        </a>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
