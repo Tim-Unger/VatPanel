@@ -8,16 +8,10 @@ namespace VatPanel
 {
     public class IndexController : Controller
     {
-        public IActionResult Index()
+        /*public IActionResult Index()
         {
             return View();
-        }
+        }*/
 
-        public void Test()
-        {
-           
-            
-
-        }
     }
 }

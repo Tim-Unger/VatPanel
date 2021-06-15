@@ -23,4 +23,7 @@ namespace VatPanel
                     webBuilder.UseStartup<Startup>();
                 });
     }
+
+  
+
 }

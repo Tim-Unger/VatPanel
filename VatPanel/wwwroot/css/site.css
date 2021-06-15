@@ -134,3 +134,8 @@ h2 span {
 
 }
 
+
+.footer {
+    max-height:fit-content;
+    padding: 0px 0px 10px 0px;
+}
